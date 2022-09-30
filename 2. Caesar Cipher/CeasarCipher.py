@@ -32,3 +32,13 @@ print(logo.logo)
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 alphabet_len = len(alphabet)
 
+def fixIndex(i):
+   if i > alphabet_len:
+      i %= alphabet_len
+      print(i)
+   elif i < 0:
+      i %= alphabet_len
+      print(i)
+
+   return i
+
