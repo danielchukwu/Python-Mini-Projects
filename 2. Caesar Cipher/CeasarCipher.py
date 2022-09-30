@@ -67,3 +67,18 @@ def cipher(text, shift, direction):
 
    print(f'Here\'s the {direction}d result: {cipher_text}')
 
+
+ride_on = True
+while ride_on:
+   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+   text = input("Type your message:\n").lower()
+   shift = int(input("Type the shift number:\n"))
+
+   if direction.lower() == 'encode':
+      cipher(text, shift, direction)
+   elif direction.lower() == 'decode':
+      cipher(text, shift, direction)
+
+   # ask user if they would like to repeat
+   opt = input("Type 'yes' if you want to go again. Otherwise type 'no': ")
+   ride_on = True if opt == 'yes' else False
