@@ -42,3 +42,28 @@ def fixIndex(i):
 
    return i
 
+
+# helper function for encoding and decoding
+def cipher(text, shift, direction):
+   cipher_text = ''
+
+   # find index of text
+   for letter in text:
+      try:
+         if direction == 'encode':
+            i = alphabet.index(letter) + shift 
+         else:
+            i = alphabet.index(letter) - shift
+      except:
+         i = None
+
+      # fix index if it is ever out of range
+      i = fixIndex(i)
+      
+      if i != None:
+         cipher_text += alphabet[i]
+      else:
+         cipher_text += letter
+
+   print(f'Here\'s the {direction}d result: {cipher_text}')
+
